@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Open Mic Night: microphone on stage under a spotlight -->
+  <rect width="800" height="500" fill="#5f3dc4"/>
+  <polygon points="400,0 250,420 550,420" fill="#e5dbff" opacity="0.35"/>
+  <rect x="0" y="420" width="800" height="80" fill="#3b2a6b"/>
+  <rect x="390" y="230" width="20" height="190" fill="#212529"/>
+  <rect x="340" y="410" width="120" height="14" rx="6" fill="#212529"/>
+  <rect x="365" y="140" width="70" height="110" rx="35" fill="#adb5bd"/>
+  <g stroke="#495057" stroke-width="4">
+    <line x1="370" y1="170" x2="430" y2="170"/><line x1="368" y1="195" x2="432" y2="195"/><line x1="370" y1="220" x2="430" y2="220"/>
+  </g>
+  <g fill="#ffd43b"><circle cx="150" cy="120" r="8"/><circle cx="650" cy="90" r="8"/><circle cx="600" cy="200" r="6"/><circle cx="200" cy="250" r="6"/></g>
+</svg>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+  File: event.html
+  Author: Arodi Kapuadi
+  Course: CSC 372 - Assignment 2 (Layouts)
+  Description: Featured event details page for the Fall Harvest Festival.
+               Uses a two-column main/sidebar layout (CSS Grid) and a row of
+               related event cards (Flexbox).
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Details, schedule, and registration for the Fall Harvest Festival at Northbridge State University.">
+  <title>Fall Harvest Festival | Campus Pulse</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== Site header and primary navigation (shared with index.html) ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="brand">
+        <a class="brand__name" href="index.html">Campus Pulse</a>
+        <p class="brand__tagline">Find your people at Northbridge State</p>
+      </div>
+      <nav class="main-nav" aria-label="Primary">
+        <ul class="main-nav__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#upcoming-events">Upcoming Events</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="event.html" aria-current="page">Featured Event</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== Event introduction ========== -->
+    <section class="event-intro" aria-labelledby="event-heading">
+      <p class="tag">Festival</p>
+      <h1 id="event-heading">Fall Harvest Festival</h1>
+      <p class="event-intro__when">
+        <time datetime="2026-11-14T16:00">Saturday, November 14, 2026 &middot; 4:00&ndash;9:00 PM</time>
+        &middot; Founders Quad
+      </p>
+      <figure class="event-intro__figure">
+        <img src="images/harvest-festival.svg" alt="White festival tent glowing under string lights at dusk, with pumpkins scattered across the ground" width="800" height="500">
+        <figcaption>The Founders Quad transforms into a lantern-lit festival ground every November.</figcaption>
+      </figure>
+      <p class="event-intro__lead">
+        Celebrate the end of the fall season with Northbridge State's biggest
+        campus tradition. The Harvest Festival brings together student
+        organizations, local farms, and food vendors for an evening of music,
+        games, and community.
+      </p>
+    </section>
+
+    <!-- ========== Main content + sidebar (CSS Grid) ========== -->
+    <div class="event-layout">
+
+      <article class="event-details">
+        <section aria-labelledby="about-event-heading">
+          <h2 id="about-event-heading">About the Event</h2>
+          <p>
+            Now in its 35th year, the Harvest Festival is hosted by the Student
+            Activities Board. More than 30 student organizations run booths
+            with games, crafts, and fundraisers, while local farms sell apple
+            cider and fresh produce. The night ends with a lantern walk around
+            the quad.
+          </p>
+        </section>
+
+        <section aria-labelledby="expect-heading">
+          <h2 id="expect-heading">What to Expect</h2>
+          <ul class="detail-list">
+            <li>Live sets from three student bands on the main stage</li>
+            <li>Pumpkin carving and painting stations (supplies provided)</li>
+            <li>Food trucks with vegetarian, vegan, and gluten-free options</li>
+            <li>A free hot cider tent for the first 500 guests</li>
+            <li>Lantern walk at 8:30 PM</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="schedule-heading">
+          <h2 id="schedule-heading">Schedule</h2>
+          <ol class="schedule">
+            <li><time datetime="16:00">4:00 PM</time> Gates open and booths begin</li>
+            <li><time datetime="17:00">5:00 PM</time> Pumpkin carving contest starts</li>
+            <li><time datetime="18:00">6:00 PM</time> Main stage live music</li>
+            <li><time datetime="19:30">7:30 PM</time> Carving contest winners announced</li>
+            <li><time datetime="20:30">8:30 PM</time> Lantern walk around Founders Quad</li>
+            <li><time datetime="21:00">9:00 PM</time> Festival closes</li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="access-heading">
+          <h2 id="access-heading">Accessibility &amp; Participation</h2>
+          <p>
+            Founders Quad has paved, step-free paths to every booth, and
+            accessible restrooms are located in Founders Hall. ASL
+            interpretation is provided for main stage performances. A quiet
+            tent with seating is available near the north entrance for anyone
+            who needs a break from the crowd.
+          </p>
+          <p>
+            To request additional accommodations, email the Office of Student
+            Engagement at least five days before the event.
+          </p>
+        </section>
+      </article>
+
+      <aside class="event-sidebar" aria-labelledby="sidebar-heading">
+        <h2 id="sidebar-heading">Event Info</h2>
+        <dl class="info-list">
+          <dt>Date</dt>
+          <dd><time datetime="2026-11-14">Saturday, November 14, 2026</time></dd>
+          <dt>Time</dt>
+          <dd><time datetime="16:00">4:00 PM</time> &ndash; <time datetime="21:00">9:00 PM</time></dd>
+          <dt>Location</dt>
+          <dd>Founders Quad, Northbridge State University</dd>
+          <dt>Organizer</dt>
+          <dd>Student Activities Board</dd>
+          <dt>Admission</dt>
+          <dd>Free for students with a valid ID; $5 for guests</dd>
+        </dl>
+        <a class="button button--block" href="mailto:engage@northbridge.example.edu?subject=Harvest%20Festival%20Registration">Register for the Festival</a>
+      </aside>
+
+    </div>
+
+    <!-- ========== Related events (Flexbox) ========== -->
+    <section class="related" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Events</h2>
+      <div class="related__list">
+        <article class="mini-card">
+          <img src="images/movie-night.svg" alt="Outdoor movie screen under a starry sky with a box of popcorn" width="800" height="500">
+          <h3>Outdoor Movie Night</h3>
+          <p><time datetime="2026-11-20T19:30">Fri, Nov 20 &middot; 7:30 PM</time></p>
+          <a class="card-link" href="index.html#upcoming-events">See all events<span class="visually-hidden"> including Outdoor Movie Night</span></a>
+        </article>
+        <article class="mini-card">
+          <img src="images/open-mic.svg" alt="Microphone on a stage under a purple spotlight" width="800" height="500">
+          <h3>Open Mic Night</h3>
+          <p><time datetime="2026-11-10T19:00">Tue, Nov 10 &middot; 7:00 PM</time></p>
+          <a class="card-link" href="index.html#upcoming-events">See all events<span class="visually-hidden"> including Open Mic Night</span></a>
+        </article>
+        <article class="mini-card">
+          <img src="images/sustainability-workshop.svg" alt="Seedling held in cupped hands inside a green circle" width="800" height="500">
+          <h3>Zero-Waste Living Workshop</h3>
+          <p><time datetime="2026-11-18T17:30">Wed, Nov 18 &middot; 5:30 PM</time></p>
+          <a class="card-link" href="index.html#upcoming-events">See all events<span class="visually-hidden"> including Zero-Waste Living Workshop</span></a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Site footer (shared with index.html) ========== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Northbridge State University Office of Student Engagement</p>
+      <p>Contact: <a href="mailto:engage@northbridge.example.edu">engage@northbridge.example.edu</a></p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#upcoming-events">Upcoming Events</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

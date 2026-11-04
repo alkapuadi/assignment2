@@ -470,3 +470,73 @@ main > section,
   padding: 0;
   list-style: none;
 }
+
+/* ---------- 12. Media queries ---------- */
+
+/* Tablet: 640px and wider */
+@media (min-width: 640px) {
+  h1 { font-size: 2.4rem; }
+
+  /* Brand on the left, nav on the right, vertically centered */
+  .site-header__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  /* Two equal event columns */
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Featured card fills the full first row */
+  .event-card--featured {
+    grid-column: 1 / -1;
+  }
+
+  main > section,
+  .event-layout {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+/* Desktop: 960px and wider */
+@media (min-width: 960px) {
+  h1 { font-size: 2.8rem; }
+
+  /* Text and image side by side */
+  .hero {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  /* Three columns; the featured card spans two, so cards have two widths */
+  .event-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .event-card--featured {
+    grid-column: span 2;
+  }
+
+  /* Main content takes the remaining width; sidebar is fixed at 320px */
+  .event-layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+
+  /* Keep the sidebar in view while reading the long main column */
+  .event-sidebar {
+    position: sticky;
+    top: var(--space-sm);
+  }
+
+  /* Footer items spread across one row */
+  .site-footer__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

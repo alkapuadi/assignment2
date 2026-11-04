@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Outdoor Movie Night: screen under the stars with popcorn -->
+  <rect width="800" height="500" fill="#10142b"/>
+  <g fill="#fff"><circle cx="80" cy="60" r="3"/><circle cx="200" cy="40" r="2"/><circle cx="700" cy="50" r="3"/><circle cx="620" cy="110" r="2"/><circle cx="120" cy="150" r="2"/></g>
+  <rect x="160" y="80" width="480" height="260" fill="#e9ecef"/>
+  <rect x="180" y="100" width="440" height="220" fill="#74c0fc"/>
+  <rect x="0" y="420" width="800" height="80" fill="#1b4332"/>
+  <polygon points="620,470 700,470 715,360 605,360" fill="#fff"/>
+  <g fill="#e03131"><rect x="625" y="360" width="15" height="110"/><rect x="655" y="360" width="15" height="110"/><rect x="685" y="360" width="15" height="110"/></g>
+  <g fill="#ffe066"><circle cx="620" cy="355" r="14"/><circle cx="645" cy="345" r="16"/><circle cx="672" cy="350" r="15"/><circle cx="700" cy="356" r="13"/></g>
+</svg>

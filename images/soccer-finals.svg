@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Intramural Soccer Finals: field with goal and ball -->
+  <rect width="800" height="500" fill="#2b8a3e"/>
+  <g fill="none" stroke="#fff" stroke-width="6">
+    <rect x="40" y="40" width="720" height="420"/><line x1="400" y1="40" x2="400" y2="460"/><circle cx="400" cy="250" r="70"/>
+    <rect x="40" y="160" width="90" height="180"/><rect x="670" y="160" width="90" height="180"/>
+  </g>
+  <circle cx="520" cy="300" r="40" fill="#fff"/>
+  <polygon points="520,280 538,293 531,314 509,314 502,293" fill="#212529"/>
+</svg>

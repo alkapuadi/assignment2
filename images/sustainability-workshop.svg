@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Sustainability Workshop: seedling in hands with a recycle circle -->
+  <rect width="800" height="500" fill="#d3f9d8"/>
+  <circle cx="400" cy="230" r="170" fill="none" stroke="#37b24d" stroke-width="18" stroke-dasharray="200 60"/>
+  <rect x="392" y="200" width="16" height="130" fill="#2b8a3e"/>
+  <ellipse cx="350" cy="210" rx="55" ry="25" fill="#51cf66" transform="rotate(-25 350 210)"/>
+  <ellipse cx="450" cy="190" rx="55" ry="25" fill="#40c057" transform="rotate(25 450 190)"/>
+  <path d="M280 330 Q400 420 520 330 L520 360 Q400 450 280 360 Z" fill="#e8a87c"/>
+</svg>

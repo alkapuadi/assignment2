@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  File: index.html
+  Author: Arodi Kapuadi
+  Course: CSC 372 - Assignment 2 (Layouts)
+  Description: Home page of the Campus Pulse event guide for Northbridge State
+               University. Shows a hero section, a grid of upcoming events,
+               and an About section describing the Office of Student Engagement.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus Pulse helps Northbridge State University students discover campus events and activities.">
+  <title>Campus Pulse | Northbridge State Event Guide</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========== Site header and primary navigation ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="brand">
+        <a class="brand__name" href="index.html">Campus Pulse</a>
+        <p class="brand__tagline">Find your people at Northbridge State</p>
+      </div>
+      <nav class="main-nav" aria-label="Primary">
+        <ul class="main-nav__list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="index.html#upcoming-events">Upcoming Events</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="event.html">Featured Event</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== Hero section ========== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__content">
+        <h1 id="hero-heading">There's always something happening on campus</h1>
+        <p>
+          From late-night hackathons to open mic stages and outdoor movies,
+          Campus Pulse collects every student event at Northbridge State in
+          one place so you never miss out.
+        </p>
+        <a class="button" href="#upcoming-events">Browse Upcoming Events</a>
+      </div>
+      <figure class="hero__figure">
+        <img src="images/hero-campus.svg" alt="Illustration of students gathering on the lawn in front of a red-brick campus hall at sunset" width="800" height="500">
+      </figure>
+    </section>
+
+    <!-- ========== Upcoming events grid ========== -->
+    <section class="upcoming" id="upcoming-events" aria-labelledby="upcoming-heading">
+      <h2 id="upcoming-heading">Upcoming Events</h2>
+      <p class="section-intro">Fall semester highlights hosted by student organizations and campus departments.</p>
+
+      <div class="event-grid">
+
+        <!-- Featured card: spans two columns on wider screens -->
+        <article class="event-card event-card--featured">
+          <img src="images/harvest-festival.svg" alt="Festival tent glowing under string lights with pumpkins on the ground" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Festival</p>
+            <h3>Fall Harvest Festival</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-14T16:00">Sat, Nov 14 &middot; 4:00&ndash;9:00 PM</time></li>
+              <li>Founders Quad</li>
+            </ul>
+            <p>Live music, food trucks, pumpkin carving, and a lantern walk to celebrate the season with the whole campus.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for Fall Harvest Festival</span></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="images/hackathon.svg" alt="Laptop displaying lines of code" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Technology</p>
+            <h3>HackNorth 24-Hour Hackathon</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-07T10:00">Sat, Nov 7 &middot; 10:00 AM</time></li>
+              <li>Petty Science Building, Room 120</li>
+            </ul>
+            <p>Team up, build a project from scratch, and pitch it to faculty judges for prizes.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for HackNorth 24-Hour Hackathon</span></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="images/open-mic.svg" alt="Microphone on a stage under a purple spotlight" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Arts</p>
+            <h3>Open Mic Night</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-10T19:00">Tue, Nov 10 &middot; 7:00 PM</time></li>
+              <li>Student Union Coffeehouse</li>
+            </ul>
+            <p>Share poetry, music, or comedy, or just come to cheer on fellow students.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for Open Mic Night</span></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="images/career-fair.svg" alt="Three employer booths with colored banners and a briefcase" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Career</p>
+            <h3>Fall Career &amp; Internship Fair</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-12T11:00">Thu, Nov 12 &middot; 11:00 AM&ndash;3:00 PM</time></li>
+              <li>Alumni Arena</li>
+            </ul>
+            <p>Meet more than 60 employers hiring for internships and full-time roles.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for Fall Career and Internship Fair</span></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="images/soccer-finals.svg" alt="Soccer ball on a green field with white field markings" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Sports</p>
+            <h3>Intramural Soccer Finals</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-15T13:00">Sun, Nov 15 &middot; 1:00 PM</time></li>
+              <li>Recreation Fields East</li>
+            </ul>
+            <p>The top two intramural teams face off for the championship trophy.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for Intramural Soccer Finals</span></a>
+          </div>
+        </article>
+
+        <article class="event-card">
+          <img src="images/sustainability-workshop.svg" alt="Seedling held in cupped hands inside a green circle" width="800" height="500">
+          <div class="event-card__body">
+            <p class="tag">Workshop</p>
+            <h3>Zero-Waste Living Workshop</h3>
+            <ul class="event-meta">
+              <li><time datetime="2026-11-18T17:30">Wed, Nov 18 &middot; 5:30 PM</time></li>
+              <li>Green Commons, Room 2</li>
+            </ul>
+            <p>Learn simple habits to cut waste in your dorm and take home a free reusable kit.</p>
+            <a class="card-link" href="event.html">View details<span class="visually-hidden"> for Zero-Waste Living Workshop</span></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========== About section ========== -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Campus Pulse</h2>
+      <p>
+        Campus Pulse is run by the Northbridge State Office of Student
+        Engagement. We work with more than 200 registered student
+        organizations and campus departments to publish their events in one
+        easy-to-browse guide.
+      </p>
+      <p>
+        Whether you are a first-year student looking for community or a
+        senior squeezing in one last festival, our goal is to make getting
+        involved simple.
+      </p>
+      <ul class="benefit-list">
+        <li>A single calendar of verified campus events</li>
+        <li>Free event promotion for registered student organizations</li>
+        <li>Accessibility details listed for every event</li>
+        <li>Room booking and event-planning advice from our staff</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ========== Site footer ========== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>&copy; 2026 Northbridge State University Office of Student Engagement</p>
+      <p>Contact: <a href="mailto:engage@northbridge.example.edu">engage@northbridge.example.edu</a></p>
+      <ul class="footer-links">
+        <li><a href="index.html#upcoming-events">Upcoming Events</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="event.html">Featured Event</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

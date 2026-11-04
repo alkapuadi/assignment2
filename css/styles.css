@@ -288,6 +288,11 @@ main > section,
   border: 2px solid var(--color-accent);
 }
 
+/* Keep the category tag sized to its text instead of stretching */
+.event-card__body .tag {
+  align-self: flex-start;
+}
+
 .event-meta {
   margin: 0 0 var(--space-xs);
   padding: 0;
@@ -367,12 +372,14 @@ main > section,
 }
 
 .schedule li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
   padding: var(--space-xs) var(--space-sm);
 }
 
 .schedule time {
-  display: inline-block;
-  min-width: 5.5rem;
+  flex: 0 0 4.5rem;
   font-weight: 700;
   color: var(--color-primary-dark);
 }

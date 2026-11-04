@@ -1,0 +1,472 @@
+/*
+  File: css/styles.css
+  Author: Arodi Kapuadi
+  Course: CSC 372 - Assignment 2 (Layouts)
+  Description: Shared stylesheet for index.html and event.html.
+               Written mobile-first: base styles target small screens, and
+               media queries at the bottom of the file add multi-column
+               layouts for tablets (640px+) and desktops (960px+).
+
+  Table of contents
+    1. Custom properties (colors, spacing)
+    2. Reset and base elements
+    3. Utilities and shared components (buttons, tags, links)
+    4. Header and navigation        (Flexbox)
+    5. Hero                         (Flexbox)
+    6. Upcoming events grid         (Grid)
+    7. About section
+    8. Event intro
+    9. Event layout: main + sidebar (Grid)
+   10. Related events               (Flexbox)
+   11. Footer                       (Flexbox)
+   12. Media queries
+*/
+
+/* ---------- 1. Custom properties ---------- */
+:root {
+  --color-primary: #9c2a2a;      /* university brick red */
+  --color-primary-dark: #6e1c1c;
+  --color-accent: #f08c00;       /* autumn orange */
+  --color-text: #222;
+  --color-muted: #555;
+  --color-bg: #faf7f2;
+  --color-surface: #fff;
+  --color-border: #e2dcd2;
+
+  --radius: 10px;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --max-width: 1100px;
+}
+
+/* ---------- 2. Reset and base elements ---------- */
+
+/* Include padding and border in every element's width so layouts add up */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; color: var(--color-primary-dark); }
+h3 { font-size: 1.15rem; }
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-primary-dark);
+}
+
+/* Visible focus outline for keyboard users */
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Every top-level page section shares the same centered, padded column */
+main > section,
+.event-layout {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-sm);
+}
+
+/* ---------- 3. Utilities and shared components ---------- */
+
+/* Hides text visually but keeps it available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* A link styled as a button */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.button--block {
+  display: block;
+  width: 100%;
+}
+
+/* Small category label */
+.tag {
+  display: inline-block;
+  margin: 0 0 var(--space-xs);
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background-color: #fff1e0;
+  color: #8a4b00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-link {
+  font-weight: 700;
+}
+
+.section-intro {
+  color: var(--color-muted);
+  margin-bottom: var(--space-md);
+}
+
+/* ---------- 4. Header and navigation (Flexbox) ---------- */
+.site-header {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-bottom: 4px solid var(--color-accent);
+}
+
+/* Stacks brand and nav on phones; becomes a row at 640px (see media queries) */
+.site-header__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-sm);
+}
+
+.brand__name {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand__name:hover,
+.brand__name:focus {
+  color: #ffe8cc;
+}
+
+.brand__tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Nav links sit in a row and wrap to a new line when space runs out */
+.main-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__list a {
+  display: block;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav__list a:hover,
+.main-nav__list a:focus,
+.main-nav__list a[aria-current="page"] {
+  border-bottom-color: var(--color-accent);
+  color: #fff;
+}
+
+/* ---------- 5. Hero (Flexbox) ---------- */
+
+/* Text and image stack on phones; sit side by side at 960px */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.hero__content {
+  flex: 1;
+}
+
+.hero__content p {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+}
+
+.hero__figure {
+  flex: 1;
+  margin: 0;
+}
+
+.hero__figure img {
+  border-radius: var(--radius);
+}
+
+/* ---------- 6. Upcoming events grid (Grid) ---------- */
+
+/* One column on phones; two at 640px; three at 960px with a wide featured card */
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.event-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-sm);
+}
+
+/* Push the "View details" link to the bottom so links line up across a row */
+.event-card__body .card-link {
+  margin-top: auto;
+}
+
+.event-card--featured {
+  border: 2px solid var(--color-accent);
+}
+
+.event-meta {
+  margin: 0 0 var(--space-xs);
+  padding: 0;
+  list-style: none;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- 7. About section ---------- */
+.about {
+  border-top: 1px solid var(--color-border);
+}
+
+.about p {
+  max-width: 70ch;
+}
+
+.benefit-list {
+  margin: var(--space-sm) 0 0;
+  padding-left: 1.25rem;
+}
+
+.benefit-list li {
+  margin-bottom: var(--space-xs);
+}
+
+/* ---------- 8. Event intro ---------- */
+.event-intro__when {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.event-intro__figure {
+  margin: var(--space-md) 0;
+}
+
+.event-intro__figure img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.event-intro__figure figcaption {
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.event-intro__lead {
+  max-width: 70ch;
+  font-size: 1.1rem;
+}
+
+/* ---------- 9. Event layout: main + sidebar (Grid) ---------- */
+
+/* Single column on phones (sidebar falls below main); two columns at 960px */
+.event-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  padding-top: 0;
+}
+
+.event-details section {
+  margin-bottom: var(--space-md);
+}
+
+.detail-list {
+  padding-left: 1.25rem;
+}
+
+.schedule {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 3px solid var(--color-accent);
+}
+
+.schedule li {
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.schedule time {
+  display: inline-block;
+  min-width: 5.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.event-sidebar {
+  align-self: start;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+}
+
+.info-list {
+  margin: 0 0 var(--space-md);
+}
+
+.info-list dt {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.info-list dd {
+  margin: 0 0 var(--space-sm);
+}
+
+/* ---------- 10. Related events (Flexbox) ---------- */
+
+/* Cards share a row and wrap onto new lines when the screen is too narrow */
+.related {
+  border-top: 1px solid var(--color-border);
+}
+
+.related__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Grow and shrink from a 240px base so 1, 2, or 3 cards fit per row */
+.mini-card {
+  flex: 1 1 240px;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+}
+
+.mini-card img {
+  margin-bottom: var(--space-sm);
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.mini-card p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-xs);
+}
+
+/* ---------- 11. Footer (Flexbox) ---------- */
+.site-footer {
+  margin-top: var(--space-lg);
+  background-color: #2b2118;
+  color: #f1e9de;
+}
+
+.site-footer a {
+  color: #ffd8a8;
+}
+
+/* Stacks on phones; spreads across a row at 960px */
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-sm);
+  font-size: 0.9rem;
+}
+
+.site-footer__inner p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
